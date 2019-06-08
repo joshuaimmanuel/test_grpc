@@ -1,1 +1,446 @@
-[This code's documentation lives on the grpc.io site.](https://grpc.io/docs/tutorials/basic/python.html)
+# gRPC test code
+
+* Create a python virtual environment
+
+  ```
+  python3 -m venv env
+  ```
+
+* Activate the virtual environment
+
+  ```
+  source env/bin/activate
+  ```
+
+* Install gRPC tools
+
+  ```
+  (env) pip install grpcio-tools
+  ```
+
+* Generate python code for RPC from proto files
+
+  ```
+  (env) python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. route_guide.proto
+  ```
+
+* Start the gRPC server
+
+  ```
+  python route_guide_server.py
+  ```
+
+* Activate python virtual environment in another terminal and run the
+  shell script
+
+  ```
+  (env) ./run_client.sh
+  ```
+
+* In the server tab, we can see the counter values getting printed.
+
+  ```
+  GetFeature count : 1
+  GetFeature count : 2
+  GetFeature count : 3
+  GetFeature count : 4
+  GetFeature count : 5
+  GetFeature count : 6
+  GetFeature count : 7
+  GetFeature count : 8
+  GetFeature count : 9
+  GetFeature count : 10
+  GetFeature count : 11
+  GetFeature count : 12
+  GetFeature count : 13
+  GetFeature count : 14
+  GetFeature count : 15
+  GetFeature count : 16
+  GetFeature count : 17
+  GetFeature count : 18
+  GetFeature count : 19
+  GetFeature count : 20
+  GetFeature count : 21
+  GetFeature count : 22
+  GetFeature count : 23
+  GetFeature count : 24
+  GetFeature count : 25
+  GetFeature count : 26
+  GetFeature count : 27
+  GetFeature count : 28
+  GetFeature count : 29
+  GetFeature count : 30
+  GetFeature count : 31
+  GetFeature count : 32
+  GetFeature count : 33
+  GetFeature count : 34
+  GetFeature count : 35
+  GetFeature count : 36
+  GetFeature count : 37
+  GetFeature count : 38
+  GetFeature count : 39
+  GetFeature count : 40
+  GetFeature count : 41
+  GetFeature count : 42
+  GetFeature count : 43
+  GetFeature count : 44
+  GetFeature count : 45
+  GetFeature count : 46
+  GetFeature count : 47
+  GetFeature count : 48
+  GetFeature count : 47
+  GetFeature count : 47
+  GetFeature count : 47
+  GetFeature count : 52
+  GetFeature count : 53
+  GetFeature count : 54
+  GetFeature count : 55
+  GetFeature count : 56
+  GetFeature count : 57
+  GetFeature count : 58
+  GetFeature count : 59
+  GetFeature count : 60
+  GetFeature count : 60
+  GetFeature count : 60
+  GetFeature count : 63
+  GetFeature count : 64
+  GetFeature count : 65
+  GetFeature count : 66
+  GetFeature count : 67
+  GetFeature count : 68
+  GetFeature count : 69
+  GetFeature count : 70
+  GetFeature count : 71
+  GetFeature count : 72
+  GetFeature count : 73
+  GetFeature count : 74
+  GetFeature count : 75
+  GetFeature count : 76
+  GetFeature count : 77
+  GetFeature count : 78
+  GetFeature count : 79
+  GetFeature count : 80
+  GetFeature count : 81
+  GetFeature count : 82
+  GetFeature count : 83
+  GetFeature count : 84
+  GetFeature count : 85
+  GetFeature count : 86
+  GetFeature count : 87
+  GetFeature count : 88
+  GetFeature count : 89
+  GetFeature count : 90
+  GetFeature count : 91
+  GetFeature count : 92
+  GetFeature count : 93
+  GetFeature count : 94
+  GetFeature count : 95
+  GetFeature count : 96
+  GetFeature count : 97
+  GetFeature count : 98
+  GetFeature count : 98
+  GetFeature count : 100
+  GetFeature count : 100
+  GetFeature count : 100
+  GetFeature count : 103
+  GetFeature count : 104
+  GetFeature count : 105
+  GetFeature count : 106
+  GetFeature count : 107
+  GetFeature count : 108
+  GetFeature count : 109
+  GetFeature count : 110
+  GetFeature count : 111
+  GetFeature count : 112
+  GetFeature count : 113
+  GetFeature count : 114
+  GetFeature count : 115
+  GetFeature count : 116
+  GetFeature count : 117
+  GetFeature count : 118
+  GetFeature count : 119
+  GetFeature count : 120
+  GetFeature count : 120
+  GetFeature count : 120
+  GetFeature count : 123
+  GetFeature count : 124
+  GetFeature count : 125
+  GetFeature count : 126
+  GetFeature count : 127
+  GetFeature count : 128
+  GetFeature count : 129
+  GetFeature count : 130
+  GetFeature count : 131
+  GetFeature count : 132
+  GetFeature count : 133
+  GetFeature count : 134
+  GetFeature count : 135
+  GetFeature count : 136
+  GetFeature count : 137
+  GetFeature count : 138
+  GetFeature count : 139
+  GetFeature count : 140
+  GetFeature count : 141
+  GetFeature count : 142
+  GetFeature count : 143
+  GetFeature count : 144
+  GetFeature count : 145
+  GetFeature count : 146
+  GetFeature count : 147
+  GetFeature count : 148
+  GetFeature count : 149
+  GetFeature count : 150
+  GetFeature count : 150
+  GetFeature count : 150
+  GetFeature count : 153
+  GetFeature count : 154
+  GetFeature count : 155
+  GetFeature count : 156
+  GetFeature count : 157
+  GetFeature count : 158
+  GetFeature count : 159
+  GetFeature count : 160
+  GetFeature count : 161
+  GetFeature count : 161
+  GetFeature count : 161
+  GetFeature count : 164
+  GetFeature count : 165
+  GetFeature count : 166
+  GetFeature count : 167
+  GetFeature count : 168
+  GetFeature count : 169
+  GetFeature count : 170
+  GetFeature count : 171
+  GetFeature count : 172
+  GetFeature count : 173
+  GetFeature count : 174
+  GetFeature count : 175
+  GetFeature count : 176
+  GetFeature count : 177
+  GetFeature count : 178
+  GetFeature count : 179
+  GetFeature count : 180
+  GetFeature count : 181
+  GetFeature count : 182
+  GetFeature count : 183
+  GetFeature count : 184
+  GetFeature count : 185
+  GetFeature count : 186
+  GetFeature count : 187
+  GetFeature count : 188
+  GetFeature count : 189
+  GetFeature count : 190
+  GetFeature count : 191
+  GetFeature count : 192
+  GetFeature count : 193
+  GetFeature count : 194
+  GetFeature count : 195
+  GetFeature count : 196
+  GetFeature count : 197
+  GetFeature count : 198
+  GetFeature count : 199
+  GetFeature count : 200
+  GetFeature count : 201
+  GetFeature count : 202
+  GetFeature count : 203
+  GetFeature count : 204
+  GetFeature count : 205
+  GetFeature count : 206
+  GetFeature count : 207
+  GetFeature count : 208
+  GetFeature count : 209
+  GetFeature count : 210
+  GetFeature count : 211
+  GetFeature count : 212
+  GetFeature count : 212
+  GetFeature count : 214
+  GetFeature count : 215
+  GetFeature count : 216
+  GetFeature count : 217
+  GetFeature count : 218
+  GetFeature count : 219
+  GetFeature count : 220
+  GetFeature count : 221
+  GetFeature count : 222
+  GetFeature count : 222
+  GetFeature count : 224
+  GetFeature count : 225
+  GetFeature count : 226
+  GetFeature count : 227
+  GetFeature count : 228
+  GetFeature count : 229
+  GetFeature count : 230
+  GetFeature count : 231
+  GetFeature count : 232
+  GetFeature count : 232
+  GetFeature count : 234
+  GetFeature count : 235
+  GetFeature count : 236
+  GetFeature count : 237
+  GetFeature count : 238
+  GetFeature count : 239
+  GetFeature count : 240
+  GetFeature count : 241
+  GetFeature count : 242
+  GetFeature count : 243
+  GetFeature count : 244
+  GetFeature count : 245
+  GetFeature count : 246
+  GetFeature count : 247
+  GetFeature count : 248
+  GetFeature count : 249
+  GetFeature count : 250
+  GetFeature count : 251
+  GetFeature count : 252
+  GetFeature count : 253
+  GetFeature count : 254
+  GetFeature count : 255
+  GetFeature count : 256
+  GetFeature count : 257
+  GetFeature count : 258
+  GetFeature count : 259
+  GetFeature count : 260
+  GetFeature count : 261
+  GetFeature count : 262
+  GetFeature count : 263
+  GetFeature count : 264
+  GetFeature count : 265
+  GetFeature count : 266
+  GetFeature count : 267
+  GetFeature count : 268
+  GetFeature count : 269
+  GetFeature count : 270
+  GetFeature count : 271
+  GetFeature count : 272
+  GetFeature count : 273
+  GetFeature count : 274
+  GetFeature count : 275
+  GetFeature count : 276
+  GetFeature count : 277
+  GetFeature count : 278
+  GetFeature count : 279
+  GetFeature count : 280
+  GetFeature count : 281
+  GetFeature count : 282
+  GetFeature count : 282
+  GetFeature count : 284
+  GetFeature count : 285
+  GetFeature count : 286
+  GetFeature count : 287
+  GetFeature count : 288
+  GetFeature count : 289
+  GetFeature count : 290
+  GetFeature count : 291
+  GetFeature count : 292
+  GetFeature count : 292
+  GetFeature count : 294
+  GetFeature count : 295
+  GetFeature count : 296
+  GetFeature count : 297
+  GetFeature count : 298
+  GetFeature count : 299
+  GetFeature count : 300
+  GetFeature count : 301
+  GetFeature count : 302
+  GetFeature count : 303
+  GetFeature count : 304
+  GetFeature count : 305
+  GetFeature count : 306
+  GetFeature count : 307
+  GetFeature count : 308
+  GetFeature count : 309
+  GetFeature count : 310
+  GetFeature count : 311
+  GetFeature count : 312
+  GetFeature count : 313
+  GetFeature count : 314
+  GetFeature count : 315
+  GetFeature count : 315
+  GetFeature count : 317
+  GetFeature count : 318
+  GetFeature count : 319
+  GetFeature count : 320
+  GetFeature count : 321
+  GetFeature count : 322
+  GetFeature count : 323
+  GetFeature count : 324
+  GetFeature count : 325
+  GetFeature count : 326
+  GetFeature count : 327
+  GetFeature count : 328
+  GetFeature count : 329
+  GetFeature count : 330
+  GetFeature count : 331
+  GetFeature count : 332
+  GetFeature count : 333
+  GetFeature count : 334
+  GetFeature count : 335
+  GetFeature count : 336
+  GetFeature count : 337
+  GetFeature count : 338
+  GetFeature count : 339
+  GetFeature count : 340
+  GetFeature count : 341
+  GetFeature count : 342
+  GetFeature count : 343
+  GetFeature count : 344
+  GetFeature count : 345
+  GetFeature count : 346
+  GetFeature count : 347
+  GetFeature count : 348
+  GetFeature count : 349
+  GetFeature count : 350
+  GetFeature count : 351
+  GetFeature count : 352
+  GetFeature count : 353
+  GetFeature count : 354
+  GetFeature count : 355
+  GetFeature count : 356
+  GetFeature count : 357
+  GetFeature count : 358
+  GetFeature count : 359
+  GetFeature count : 360
+  GetFeature count : 361
+  GetFeature count : 362
+  GetFeature count : 363
+  GetFeature count : 364
+  GetFeature count : 365
+  GetFeature count : 366
+  GetFeature count : 367
+  GetFeature count : 368
+  GetFeature count : 369
+  GetFeature count : 370
+  GetFeature count : 371
+  GetFeature count : 372
+  GetFeature count : 373
+  GetFeature count : 374
+  GetFeature count : 375
+  GetFeature count : 376
+  GetFeature count : 377
+  GetFeature count : 378
+  GetFeature count : 379
+  GetFeature count : 380
+  GetFeature count : 381
+  GetFeature count : 382
+  GetFeature count : 383
+  GetFeature count : 384
+  GetFeature count : 385
+  GetFeature count : 386
+  GetFeature count : 387
+  GetFeature count : 388
+  GetFeature count : 389
+  GetFeature count : 390
+  GetFeature count : 391
+  GetFeature count : 392
+  GetFeature count : 393
+  GetFeature count : 394
+  GetFeature count : 395
+  GetFeature count : 396
+  GetFeature count : 397
+  GetFeature count : 398
+  GetFeature count : 399
+  ```
+
+> In the above we see only 399 messages getting printed. The number 100
+> is printed thrice and number 98 twice. But, this is not repeatable.
+
